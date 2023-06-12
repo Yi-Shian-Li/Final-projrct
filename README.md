@@ -6,6 +6,7 @@ This is a simple program for personal accounting.
 
 Upon entering the program, you will first see the following interface.
 ![](https://hackmd.io/_uploads/rJlq4qVvn.png)
+
 Entering 1 will load the contents of file.txt, where you can make simple personalization settings according to the specified format.
 
 
