@@ -3,6 +3,10 @@ This is a simple program for personal accounting.
 
 
 * In addition to the standard C library, this program also utilizes the <conio.h> library. To fully execute the program, you need to install this library beforehand.
+* To compile all the program files into an executable, you can enter the following command in the terminal:
+```
+gcc main.c functions.c  file.c op1_add.c op2_delete.c op3_search.c op4_show.c op5_search_category.c op6_count.c -o program
+```
 
 Upon entering the program, you will first see the following interface.
 
