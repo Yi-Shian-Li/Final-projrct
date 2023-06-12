@@ -62,6 +62,6 @@ Next, you will enter this interface where you can select the desired functionali
 * The "setting" function allows users to change the number of decimal places displayed and the number of records shown in function 4.
 * Function 7 saves the current records in a specific format in the "output.txt" file (the format is the same as "file.txt").
 * When choosing "exit," the program will ask if you want to save the current data before closing. The saving method is the same as in function 7.
-
+*the dfs game:the user will enter an integer n that indicates the number of vertices in a graph. The value of n must be between 2 and 100 (inclusive). The following n lines will contain an adjacency list. Each line represents a list of vertices that are adjacent to the vertex represented by the first number on the line. Your program should output "YES" if there’s a cycle in this graph, and "NO" if there’s no cycle. 
 
 Wishing you a smooth user experience.
