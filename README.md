@@ -6,7 +6,7 @@ This is a simple program for personal accounting.
 
 Upon entering the program, you will first see the following interface.
 
-![](https://hackmd.io/_uploads/rJlq4qVvn.png)
+![image](https://github.com/910605jeremy/Final-projrct/assets/132763427/307e6f1f-9a4a-4905-ab30-5262df1df63f)
 
 Entering 1 will load the contents of file.txt, where you can make simple personalization settings according to the specified format.
 
@@ -44,7 +44,7 @@ Here is the breakdown of the first record:
 
 After selecting option 1, the program will display the following interface.
 
-![](https://hackmd.io/_uploads/HJWwoqVDn.png)
+![image](https://github.com/910605jeremy/Final-projrct/assets/132763427/c01b9478-849b-4f1b-bb89-66876840f30a)
 
 
 
@@ -52,7 +52,7 @@ After selecting option 1, the program will display the following interface.
 
 Next, you will enter this interface where you can select the desired functionality. After selecting the function, follow the input instructions on the screen to proceed.
 
-![](https://hackmd.io/_uploads/SJmTi94D2.png)
+![image](https://github.com/910605jeremy/Final-projrct/assets/132763427/7c4fd989-1c5d-4078-92bd-609b076e7351)
 
 * The "help" function provides information about input length or number size restrictions.
 * The "setting" function allows users to change the number of decimal places displayed and the number of records shown in function 4.
