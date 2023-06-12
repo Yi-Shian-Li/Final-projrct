@@ -43,6 +43,7 @@ Here is the breakdown of the first record:
 * Note: "no" (no specific note for this transaction)
 
 After selecting option 1, the program will display the following interface.
+
 ![](https://hackmd.io/_uploads/HJWwoqVDn.png)
 
 
