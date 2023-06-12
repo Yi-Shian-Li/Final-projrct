@@ -22,8 +22,100 @@ int cur_category_num; //category的數量
 int precision = 2; //小數點顯示多少
 int default_show_n = 15;//一頁顯示多少筆資料
 
+
+typedef struct Node {
+    int value;
+    struct Node* next;
+} Node;
+
+typedef struct Graph {
+    int nodeNum;
+    Node** aList;
+} Graph;
+
+Graph* createGraph(int nodeNum) {
+    Graph* graph = (Graph*)malloc(sizeof(Graph));
+    graph->nodeNum = nodeNum;
+    graph->aList = (Node**)malloc(nodeNum * sizeof(Node*));
+
+    for (int i = 0; i < nodeNum; ++i) {
+        graph->aList[i] = NULL;
+    }
+
+    return graph;
+}
+
+void addEdge(Graph* graph, int src, int dest) {
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->value = dest;
+    newNode->next = NULL;
+
+    newNode->next = graph->aList[src];
+    graph->aList[src] = newNode;
+}
+
+Graph* readGraph() {
+    int numNodes;
+    scanf("%d", &numNodes);
+    getchar();
+
+    Graph* graph = createGraph(numNodes);
+
+    for (int i = 0; i < numNodes; ++i) {
+        char line[100];
+        fgets(line, sizeof(line), stdin);
+
+        char* token = strtok(line, " \n");
+        int srcNode = atoi(token);
+
+        token = strtok(NULL, " \n");
+        while (token != NULL) {
+            int adjNode = atoi(token);
+            addEdge(graph, srcNode, adjNode);
+            token = strtok(NULL, " \n");
+        }
+    }
+
+    return graph;
+}
+
+int DFS(Graph* graph, int* visited, int* inPath, int currNode) {
+    if (inPath[currNode]) return 1;
+    if (visited[currNode]) return 0;
+
+    visited[currNode] = 1;
+    inPath[currNode] = 1;
+
+    Node** aList = graph->aList;
+    Node* curr = aList[currNode];
+
+    while (curr != NULL) {
+        if (DFS(graph, visited, inPath, curr->value)) {
+            return 1;
+        }
+        curr = curr->next;
+    }
+
+    inPath[currNode] = 0;
+    return 0;
+}
+
+int hasCycle(Graph* graph) {
+    int numNode = graph->nodeNum;
+    int visited[100] = { 0 };
+    int inPath[100] = { 0 };
+
+    for (int i = 0; i < numNode; ++i) {
+        if (DFS(graph, visited, inPath, i)) {
+            return 1;
+        }
+    }
+
+    return 0;
+}
 int main() {
     int init = 1;
+    Graph* graph;
     int op;
         printf("Hello! Welcome to the accounting database.\n");
         while (init) {
@@ -55,10 +147,10 @@ int main() {
         printf("0. Help\n");
         printf("1. Add record\n");
         printf("2. Delete record\n");
-        printf("3. Search record\n");
+        printf("3. dfs game\n");
         printf("4. Show all records\n");
         printf("5. Search category\n");
-	    printf("6. Calculate total expense in each category\n");
+     printf("6. Calculate total expense in each category\n");
         printf("7. Save file\n");
         printf("8. Setting\n");
         printf("9. Exit\n");
@@ -77,7 +169,13 @@ int main() {
             delete_record();
             break;
         case 3:
-            search_record();
+            graph = readGraph();
+            if (hasCycle(graph)) {
+                printf("YES\n");
+            }
+            else {
+                printf("NO\n");
+            }
             break;
         case 4:
             show_all_records();
@@ -85,9 +183,9 @@ int main() {
         case 5:
             search_category();
             break;
-	    case 6:
-	        calculate_total_expense();
-	        break;
+     case 6:
+         calculate_total_expense();
+         break;
         case 7:
             save();
             break;
