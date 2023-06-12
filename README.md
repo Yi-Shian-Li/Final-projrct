@@ -1,4 +1,4 @@
-# Final-projrct test
+# Final-projrct
 This is a simple program for personal accounting.
 
 
