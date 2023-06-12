@@ -5,6 +5,7 @@ This is a simple program for personal accounting.
 * In addition to the standard C library, this program also utilizes the <conio.h> library. To fully execute the program, you need to install this library beforehand.
 
 Upon entering the program, you will first see the following interface.
+
 ![](https://hackmd.io/_uploads/rJlq4qVvn.png)
 
 Entering 1 will load the contents of file.txt, where you can make simple personalization settings according to the specified format.
@@ -41,7 +42,8 @@ Here is the breakdown of the first record:
 * Type: Expense (0 indicates an expense)
 * Note: "no" (no specific note for this transaction)
 
-After selecting option 1, the program will display the following interface.![](https://hackmd.io/_uploads/HJWwoqVDn.png)
+After selecting option 1, the program will display the following interface.
+![](https://hackmd.io/_uploads/HJWwoqVDn.png)
 
 
 
